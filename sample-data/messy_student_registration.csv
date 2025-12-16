@@ -1,0 +1,32 @@
+StudentID,FirstName,LastName,Email,Phone,Department,Year,EnrollmentDate,CourseCode,Status
+1001,Alice,Smith,alice.smith@university.edu,555-1234,Computer Science,2024,2024-01-15,CS101,Active
+1002,Bob,Johnson,bob.j@university.edu,555-2345,Mathematics,2023,2023-09-01,MATH201,Active
+1003,Charlie,Brown,,555-3456,Engineering,2024,2024-01-20,ENG101,Active
+1004,Diana,Prince,diana.prince@university.edu,555-4567,computer science,2024,01/15/2024,CS101,active
+1001,Alice,Smith,alice.smith@university.edu,555-1234,Computer Science,2024,2024-01-15,CS101,Active
+1005,Eve,Martinez,eve@uni.edu,(555) 567-8910,Physics,2023,,PHYS301,Active
+1006,Frank,,frank.wright@university.edu,555-6789,Chemistry,2022,2022-09-05,CHEM202,Graduated
+,Grace,Lee,grace.lee@university.edu,555-7890,Biology,2024,2024-01-18,BIO101,Active
+1008,Henry,Taylor,HENRY.TAYLOR@UNIVERSITY.EDU,555-8901,Mathematics,2023,2023/09/01,MATH201,active
+1009,Ivy,Chen,ivy.chen@university.edu,5559012,Computer Science,2024,2024-01-15,CS101,Active
+1010,Jack,Wilson,jack@university.edu,555-0123,Engineering,2024,2024-01-20,ENG101,Inactive
+1002,Bob,Johnson,bob.j@university.edu,555-2345,Math,2023,2023-09-01,MATH201,Active
+1011,Karen,Davis,karen.davis@yahoo.com,555-1234,Business,2023,2023-09-10,BUS101,Active
+1012,Leo,Anderson,leo.anderson@university.edu,,Computer Science,2024,2024-01-22,,Active
+1013,Maria,Garcia,maria.garcia@university.edu,555-3456,CS,2024,15-01-2024,CS101,Active
+1014,Nathan,Brown,nathan.brown@university.edu,555-4567,Mathematics,twenty-twenty-three,2023-09-01,MATH201,Active
+1015,Olivia,Miller,olivia@university,555-5678,Engineering,2024,2024-01-25,ENG202,Active
+1016,Peter,Parker,peter.parker@university.edu,555-6789,Physics,2023,2023-09-02,PHYS201,Active
+1017,,Quinn,sarah.quinn@university.edu,555-7890,Chemistry,2024,2024-01-15,CHEM101,Active
+1018,Ryan,Thomas,ryan.thomas@university.edu,555-8901,Biology,2024,2024/01/30,BIO201,ACTIVE
+1019,Sophia,White,sophia.white@university.edu,555-9012,computer SCIENCE,2024,2024-01-15,cs101,Active
+1020,Thomas,Harris,tom.harris@university.edu,555.0123,Mathematics,2023,2023-09-01,MATH301,active
+1021,Uma,Patel,uma.patel@university.edu,555-1234,Engineering,2024,2024-01-28,ENG101,Active
+1022,Victor,Lopez,victor@university.edu,555-2345,Physics,2023,Sept 1 2023,PHYS301,Active
+1008,Henry,Taylor,henry.taylor@university.edu,555-8901,Mathematics,2023,2023-09-01,MATH201,Active
+1023,Wendy,Clark,wendy.clark@university.edu,+1-555-3456,Chemistry,2024,2024-01-20,CHEM202,Active
+1024,Xavier,Rodriguez,xavier.rodriguez@university.edu,555-4567,Computer Science,2024,2024-01-15,CS201,Suspended
+1025,Yara,Kim,yara.kim@university.edu,555-5678,Biology,2023,2023-09-05,BIO301,Active
+1026,Zoe,Johnson,zoe.johnson@university.edu,555-6789,Business,2024,2024-01-10,BUS201,Active
+1027,Adam,Brown,adam.brown@university.edu,555-7890,Engineering,2024,,ENG301,Active
+1028,Betty,Davis,betty.davis@university.edu,,Mathematics,2023,2023-09-01,MATH101,Active

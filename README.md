@@ -135,8 +135,8 @@ node scripts/migrate.js
 - [x] Repository initialized
 - [x] Basic project structure
 - [x] Dependencies installed
-- [ ] NeonDB setup verified
-- [ ] Database connection tested
+- [x] NeonDB setup verified
+- [x] Database connection tested
 - [ ] Google Cloud Project setup
 - [ ] Google Sheets API enabled
 

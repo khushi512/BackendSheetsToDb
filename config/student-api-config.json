@@ -1,0 +1,63 @@
+{
+    "datasetName": "student_api",
+    "description": "Student registration API - students only (no enrollment)",
+    "version": "1.0",
+    "schema": {
+        "primaryKey": "student_id",
+        "columns": [
+            {
+                "sourceName": "StudentID",
+                "targetName": "student_id",
+                "dataType": "integer",
+                "required": true,
+                "unique": true
+            },
+            {
+                "sourceName": "FirstName",
+                "targetName": "first_name",
+                "dataType": "string",
+                "required": true
+            },
+            {
+                "sourceName": "LastName",
+                "targetName": "last_name",
+                "dataType": "string",
+                "required": true
+            },
+            {
+                "sourceName": "Email",
+                "targetName": "email",
+                "dataType": "string",
+                "required": true,
+                "unique": true
+            },
+            {
+                "sourceName": "Phone",
+                "targetName": "phone",
+                "dataType": "string",
+                "required": false
+            },
+            {
+                "sourceName": "Department",
+                "targetName": "department_id",
+                "dataType": "integer",
+                "required": true
+            }
+        ]
+    },
+    "target": {
+        "schema": "university",
+        "table": "students",
+        "conflictColumns": [
+            "student_id"
+        ],
+        "foreignKeys": {
+            "department_id": {
+                "sourceField": "department",
+                "lookupTable": "departments",
+                "lookupColumn": "department_name",
+                "returnColumn": "department_id"
+            }
+        }
+    }
+}

@@ -1,0 +1,108 @@
+{
+    "datasetName": "employee_directory",
+    "description": "Employee directory data for testing generalized ETL",
+    "version": "1.0",
+    "source": {
+        "type": "csv",
+        "filePath": "./sample-data/employee_data.csv",
+        "hasHeader": true
+    },
+    "schema": {
+        "primaryKey": "employee_id",
+        "columns": [
+            {
+                "sourceName": "EmployeeID",
+                "targetName": "employee_id",
+                "dataType": "integer",
+                "required": true,
+                "unique": true,
+                "description": "Unique employee identifier"
+            },
+            {
+                "sourceName": "FirstName",
+                "targetName": "first_name",
+                "dataType": "string",
+                "required": true,
+                "maxLength": 100,
+                "description": "Employee first name"
+            },
+            {
+                "sourceName": "LastName",
+                "targetName": "last_name",
+                "dataType": "string",
+                "required": true,
+                "maxLength": 100,
+                "description": "Employee last name"
+            },
+            {
+                "sourceName": "Email",
+                "targetName": "email",
+                "dataType": "string",
+                "required": true,
+                "unique": true,
+                "maxLength": 255,
+                "validation": "email",
+                "description": "Employee email address"
+            },
+            {
+                "sourceName": "Department",
+                "targetName": "department_id",
+                "dataType": "integer",
+                "required": true,
+                "description": "Employee department (FK)"
+            },
+            {
+                "sourceName": "Salary",
+                "targetName": "salary",
+                "dataType": "integer",
+                "required": false,
+                "description": "Employee annual salary"
+            },
+            {
+                "sourceName": "HireDate",
+                "targetName": "hire_date",
+                "dataType": "date",
+                "required": false,
+                "description": "Date employee was hired"
+            }
+        ]
+    },
+    "dataQualityRules": {
+        "duplicateDetection": {
+            "enabled": true,
+            "keys": [
+                "employee_id",
+                "email"
+            ]
+        },
+        "nullValueHandling": {
+            "strategy": "flag",
+            "requiredFields": [
+                "employee_id",
+                "first_name",
+                "last_name",
+                "email"
+            ]
+        }
+    },
+    "metadata": {
+        "createdBy": "ETL System",
+        "createdDate": "2025-12-16",
+        "lastModified": "2025-12-16"
+    },
+    "target": {
+        "schema": "university",
+        "table": "employees",
+        "conflictColumns": [
+            "employee_id"
+        ],
+        "foreignKeys": {
+            "department_id": {
+                "sourceField": "department",
+                "lookupTable": "departments",
+                "lookupColumn": "department_name",
+                "returnColumn": "department_id"
+            }
+        }
+    }
+}

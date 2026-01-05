@@ -1,0 +1,148 @@
+{
+    "datasetName": "student_registration",
+    "description": "Messy student registration data with various data quality issues",
+    "version": "1.0",
+    "source": {
+        "type": "google_sheets",
+        "sheetId": "18NqkBajAIF3Cku6NiVMERa2JNFZnvHfxX-hn6mx7WSQ",
+        "sheetName": "messy_student_registration",
+        "range": "A:J",
+        "hasHeader": true
+    },
+    "schema": {
+        "primaryKey": "student_id",
+        "columns": [
+            {
+                "sourceName": "StudentID",
+                "targetName": "student_id",
+                "dataType": "integer",
+                "required": true,
+                "unique": true,
+                "description": "Unique identifier for each student"
+            },
+            {
+                "sourceName": "FirstName",
+                "targetName": "first_name",
+                "dataType": "string",
+                "required": true,
+                "maxLength": 100,
+                "description": "Student's first name"
+            },
+            {
+                "sourceName": "LastName",
+                "targetName": "last_name",
+                "dataType": "string",
+                "required": true,
+                "maxLength": 100,
+                "description": "Student's last name"
+            },
+            {
+                "sourceName": "Email",
+                "targetName": "email",
+                "dataType": "string",
+                "required": true,
+                "unique": true,
+                "maxLength": 255,
+                "validation": "email",
+                "description": "Student's email address"
+            },
+            {
+                "sourceName": "Phone",
+                "targetName": "phone",
+                "dataType": "string",
+                "required": false,
+                "maxLength": 20,
+                "validation": "phone",
+                "description": "Student's phone number"
+            },
+            {
+                "sourceName": "Department",
+                "targetName": "department",
+                "dataType": "string",
+                "required": true,
+                "maxLength": 100,
+                "description": "Student's department"
+            },
+            {
+                "sourceName": "Year",
+                "targetName": "year",
+                "dataType": "integer",
+                "required": true,
+                "description": "Enrollment year"
+            },
+            {
+                "sourceName": "EnrollmentDate",
+                "targetName": "enrollment_date",
+                "dataType": "date",
+                "required": true,
+                "description": "Date of enrollment"
+            },
+            {
+                "sourceName": "CourseCode",
+                "targetName": "course_code",
+                "dataType": "string",
+                "required": false,
+                "maxLength": 20,
+                "description": "Primary course code"
+            },
+            {
+                "sourceName": "Status",
+                "targetName": "status",
+                "dataType": "string",
+                "required": true,
+                "maxLength": 20,
+                "defaultValue": "Active",
+                "allowedValues": [
+                    "Active",
+                    "Inactive",
+                    "Graduated",
+                    "Suspended"
+                ],
+                "description": "Student status"
+            }
+        ]
+    },
+    "dataQualityRules": {
+        "duplicateDetection": {
+            "enabled": true,
+            "keys": [
+                "student_id",
+                "email"
+            ]
+        },
+        "nullValueHandling": {
+            "strategy": "flag",
+            "requiredFields": [
+                "student_id",
+                "first_name",
+                "last_name",
+                "email"
+            ]
+        },
+        "formatStandardization": {
+            "email": "lowercase",
+            "department": "titlecase",
+            "status": "titlecase"
+        }
+    },
+    "metadata": {
+        "createdBy": "ETL System",
+        "createdDate": "2025-12-16",
+        "lastModified": "2025-12-16"
+    },
+    "target": {
+        "schema": "university",
+        "table": "students",
+        "conflictColumns": [
+            "student_id"
+        ],
+        "foreignKeys": {
+            "department_id": {
+                "sourceField": "department",
+                "lookupTable": "departments",
+                "lookupColumn": "department_name",
+                "returnColumn": "department_id"
+            }
+        }
+    }
+}

@@ -1,0 +1,136 @@
+{
+    "targetDatabase": "neondb",
+    "transformations": {
+        "student_id": [
+            "toInteger",
+            "removeNulls"
+        ],
+        "first_name": [
+            "trimWhitespace",
+            "titleCase"
+        ],
+        "last_name": [
+            "trimWhitespace",
+            "titleCase"
+        ],
+        "email": [
+            "trimWhitespace",
+            "toLowerCase",
+            "validateEmail"
+        ],
+        "phone": [
+            "standardizePhone"
+        ],
+        "department": [
+            "trimWhitespace",
+            "titleCase",
+            "normalizeDepartment"
+        ],
+        "year": [
+            "toInteger"
+        ],
+        "enrollment_date": [
+            "standardizeDate"
+        ],
+        "course_code": [
+            "trimWhitespace",
+            "toUpperCase"
+        ],
+        "status": [
+            "trimWhitespace",
+            "titleCase",
+            "normalizeStatus"
+        ]
+    },
+    "validations": {
+        "student_id": [
+            "isNotNull",
+            "isInteger",
+            "isUnique"
+        ],
+        "first_name": [
+            "isNotNull",
+            "maxLength:100"
+        ],
+        "last_name": [
+            "isNotNull",
+            "maxLength:100"
+        ],
+        "email": [
+            "isNotNull",
+            "isEmail",
+            "isUnique"
+        ],
+        "phone": [
+            "maxLength:20"
+        ],
+        "department": [
+            "isNotNull"
+        ],
+        "year": [
+            "isNotNull",
+            "isInteger",
+            "inRange:2000-2030"
+        ],
+        "enrollment_date": [
+            "isNotNull",
+            "isValidDate"
+        ],
+        "status": [
+            "isNotNull",
+            "inList:Active,Inactive,Graduated,Suspended"
+        ]
+    },
+    "departmentNormalization": {
+        "Computer Science": [
+            "CS",
+            "computer science",
+            "COMPUTER SCIENCE",
+            "comp sci"
+        ],
+        "Mathematics": [
+            "Math",
+            "MATH",
+            "mathematics"
+        ],
+        "Engineering": [
+            "ENG",
+            "engineering",
+            "ENGINEERING"
+        ],
+        "Physics": [
+            "PHYS",
+            "physics"
+        ],
+        "Chemistry": [
+            "CHEM",
+            "chemistry"
+        ],
+        "Biology": [
+            "BIO",
+            "biology"
+        ],
+        "Business": [
+            "BUS",
+            "business"
+        ]
+    },
+    "statusNormalization": {
+        "Active": [
+            "active",
+            "ACTIVE"
+        ],
+        "Inactive": [
+            "inactive",
+            "INACTIVE"
+        ],
+        "Graduated": [
+            "graduated",
+            "GRADUATED"
+        ],
+        "Suspended": [
+            "suspended",
+            "SUSPENDED"
+        ]
+    }
+}

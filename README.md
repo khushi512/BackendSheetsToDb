@@ -6,11 +6,11 @@
 
 This project provides a complete solution for migrating data-driven workflows from Google Sheets to a robust PostgreSQL database hosted on NeonDB. It includes:
 
-- ✅ Automated ETL (Extract, Transform, Load) pipeline
-- ✅ Google Sheets API integration
-- ✅ Real-time data synchronization via Google App Script
-- ✅ Interactive data dashboards
-- ✅ Comprehensive error handling and logging
+- Automated ETL (Extract, Transform, Load) pipeline
+-  Google Sheets API integration
+-  Real-time data synchronization via Google App Script
+-  Interactive data dashboards
+-  Comprehensive error handling and logging
 
 ## 🏗️ Architecture
 

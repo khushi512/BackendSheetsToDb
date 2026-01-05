@@ -2,7 +2,7 @@
 
 > **Automated ETL pipeline for migrating Google Sheets workflows to PostgreSQL/NeonDB with real-time synchronization and interactive dashboards.**
 
-## 📋 Overview
+## Overview
 
 This project provides a complete solution for migrating data-driven workflows from Google Sheets to a robust PostgreSQL database hosted on NeonDB. It includes:
 
@@ -12,7 +12,7 @@ This project provides a complete solution for migrating data-driven workflows fr
 -  Interactive data dashboards
 -  Comprehensive error handling and logging
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 Google Sheets → Google Sheets API → ETL Pipeline → PostgreSQL/NeonDB → Dashboard
@@ -21,7 +21,7 @@ Google Sheets → Google Sheets API → ETL Pipeline → PostgreSQL/NeonDB → D
                                     (Triggers)
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -65,7 +65,7 @@ Google Sheets → Google Sheets API → ETL Pipeline → PostgreSQL/NeonDB → D
    node scripts/testDbConnection.js
    ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Backend(SheetsToDb)/
@@ -79,7 +79,7 @@ Backend(SheetsToDb)/
 └── logs/                # Application logs
 ```
 
-## 🔧 Configuration
+## Configuration
 
 ### NeonDB Setup
 
@@ -97,7 +97,7 @@ Backend(SheetsToDb)/
 6. Save to `credentials/google-service-account.json`
 7. Share your Google Sheet with the service account email
 
-## 📊 Usage
+## Usage
 
 ### Running ETL Pipeline
 
@@ -119,7 +119,7 @@ node scripts/testDbConnection.js
 node scripts/migrate.js
 ```
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Backend**: Node.js
 - **Database**: PostgreSQL (NeonDB)
@@ -128,7 +128,7 @@ node scripts/migrate.js
 - **API**: Google Sheets API v4
 - **Real-time Sync**: Google App Script
 
-## 📝 Development Status
+## Development Status
 
 **Current Phase**: Environment Setup & Tools (Task 1)
 
@@ -142,18 +142,14 @@ node scripts/migrate.js
 
 See [task.md](../brain/task.md) for detailed progress tracking.
 
-## 🤝 Contributing
+## Contributing
 
 1. Create a feature branch
 2. Make your changes
 3. Test thoroughly
 4. Submit a pull request
 
-## 📄 License
-
-[MIT License](LICENSE)
-
-## 🔗 Resources
+## Resources
 
 - [NeonDB Documentation](https://neon.tech/docs)
 - [Google Sheets API](https://developers.google.com/sheets/api)
@@ -162,5 +158,4 @@ See [task.md](../brain/task.md) for detailed progress tracking.
 
 ---
 
-**Last Updated**: December 16, 2025  
 **Version**: 0.1.0 (Pre-release)
